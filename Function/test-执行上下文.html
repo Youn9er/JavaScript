@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var color = "blue";
+            function changeColor() {
+                var anotherColor = "red";
+
+                function swapColor() {
+                    var tempColor = anotherColor;
+                    anotherColor = color;
+                    color = tempColor;
+                }
+                swapColor();
+            }
+            changeColor();
+
+
+            /* 首先全局作用域入栈，在遇到result=f1()时，开始调用f1()，f1()入栈，执行f1()中的代码，然后虽然f2()在f1()中，但是并没有被调用所以不会产生新的执行环境，等到f1()执行完了出栈，返回f2，然后赋值给result，下面的result()其实就是f2()，这时产生新的执行环境，有了入栈和出栈这些动作*/
+            function f1() {
+                var n = 999;
+                function f2() {
+                    alert(n);
+                }
+                return f2;
+            }
+            var result = f1();
+            result(); //999
+
+
+            var name = "window";
+            var p = {
+                name:"Young",
+                getName:function() {
+
+                    //利用变量保存的方式以保证其访问的是p对象
+                    var self = this;
+                    return function() {
+                        return self.name;
+                    }
+                }
+            }
+            var getName = p.getName();
+            var _name = getName();
+            console.log(_name);     //Young
+        </script>
+    </body>
+</html>

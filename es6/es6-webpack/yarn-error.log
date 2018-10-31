@@ -1,0 +1,104 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /usr/local/bin:/Users/yangbaiqian/.rvm/gems/ruby-2.3.3/bin:/Users/yangbaiqian/.rvm/gems/ruby-2.3.3@global/bin:/Users/yangbaiqian/.rvm/rubies/ruby-2.3.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/yangbaiqian/.rvm/gems/ruby-2.3.3/bin:/Users/yangbaiqian/.rvm/gems/ruby-2.3.3@global/bin:/Users/yangbaiqian/.rvm/rubies/ruby-2.3.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Users/yangbaiqian/Library/Android/sdk/tools:/Users/yangbaiqian/Library/Android/sdk/platform-tools:/Users/yangbaiqian/reactNative/gradle-4.9/bin:/usr/local/Cellar/android-ndk-r10e/r10e/ndk-build:/Users/yangbaiqian/.rvm/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Users/yangbaiqian/Library/Android/sdk/tools:/Users/yangbaiqian/Library/Android/sdk/platform-tools:/Users/yangbaiqian/reactNative/gradle-4.9/bin:/usr/local/Cellar/android-ndk-r10e/r10e/ndk-build
+
+Yarn version: 
+  1.9.4
+
+Node version: 
+  10.10.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: http://10.40.189.154:7001/babel-polyfill: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/lib/node_modules/yarn/lib/cli.js:138128:19)
+      at ontimeout (timers.js:425:11)
+      at tryOnTimeout (timers.js:289:5)
+      at listOnTimeout (timers.js:252:5)
+      at Timer.processTimers (timers.js:212:10)
+
+npm manifest: 
+  {
+    "name": "es6-webpack",
+    "version": "1.0.0",
+    "description": "es6 webpack init project",
+    "main": "index.js",
+    "scripts": {
+      "watch": "webpack --watch",
+      "start": "webpack-dev-server --open"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/cucygh/es6-webpack.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/cucygh/es6-webpack/issues"
+    },
+    "eslintConfig": {
+      "root": true,
+      "parserOptions": {
+        "ecmaVersion": 2017
+      },
+      "extends": [
+        "mysticatea",
+        "mysticatea/modules"
+      ],
+      "plugins": [
+        "html"
+      ],
+      "env": {
+        "browser": false
+      },
+      "globals": {
+        "applicationCache": false,
+        "atob": false,
+        "btoa": false,
+        "console": false,
+        "document": false,
+        "location": false,
+        "window": false
+      },
+      "parser": "babel-eslint"
+    },
+    "eslintIgnore": [
+      "node_modules",
+      "webpack.config.js"
+    ],
+    "babel": {
+      "presets": [
+        "env"
+      ]
+    },
+    "homepage": "https://github.com/cucygh/es6-webpack#readme",
+    "devDependencies": {
+      "babel-core": "^6.26.0",
+      "babel-eslint": "^8.0.3",
+      "babel-loader": "^7.1.2",
+      "babel-preset-env": "^1.6.1",
+      "clean-webpack-plugin": "^0.1.17",
+      "eslint": "^3.19.0",
+      "eslint-plugin-babel": "^4.1.2",
+      "eslint-plugin-html": "^4.0.1",
+      "extract-text-webpack-plugin": "^3.0.2",
+      "html-loader": "^0.5.1",
+      "html-webpack-plugin": "^2.30.1",
+      "webpack": "^3.10.0",
+      "webpack-dev-server": "^2.9.5"
+    },
+    "dependencies": {
+      "babel-polyfill": "^6.26.0",
+      "eslint-config-mysticatea": "^12.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

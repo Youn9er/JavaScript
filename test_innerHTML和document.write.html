@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<style type="text/css">
+		#test {
+			width: 200px;
+			height: 200px;
+			background: #f00;
+		}
+	</style>
+	<script type="text/javascript">
+		function aa(){
+			alert('hhhhh')
+		}
+	</script>
+</head>
+<body>
+	<div id="test" onclick="aa()"></div>
+
+
+	<script type="text/javascript">
+		a = new Array(2,4,4,5,6);
+		sum = 0;
+		for( i = 1;i<a.length;i++)
+			sum +=a[i];
+			console.log(sum);	//19
+			document.write(sum);	//19101 document.write不会覆盖
+		var s1 = parseInt("101中学");
+		document.write(s1);			//101  parseInt取得整数部分
+	</script>
+
+	<!-- innerHTML -->
+	<div id="info">
+		<p>请填写</p>
+	</div>
+	<script type="text/javascript">
+		console.log(document.getElementById("info").innerHTML);	//<p>请填写</p>
+	</script>
+</body>
+</html>

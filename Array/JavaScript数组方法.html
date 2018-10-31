@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript数组方法</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//数组相关操作:
+			var arr1 =[20,8,345,5,4,936,7,245,657555552,11];
+
+			//1.delete Array[index]：删除数组中某个元素，仅仅删除，删除后数组长度不变
+			/*delete arr1[0];
+			console.log(arr1);  //[undefined × 1, 8, 345, 5, 4, 936, 7, 245, 657555552, 11]
+			console.log(arr1.length);*/   //10
+
+
+			//2.toString()：把数组转换成字符串并且返回结果				   
+			/*var arr2 =arr1.toString();
+			console.log(typeof arr2);     //string
+			console.log(arr2.length);*/   //35 每个数字和','都分别为一个字符串
+		
+
+			//3.join()：数组转换成字符串，并且可以定义元素之间连接的符号
+			/*var arr3 =arr1.join('^');
+			console.log(arr3);			//20^8^345^5^4^936^7^245^657555552^11
+			console.log(typeof arr3);	//string
+			console.log(arr3.length);*/	//35
+		
+
+			//4.concat()：连接两个或者多个数组，并返回结果
+			/*var arr4 =['a','g','e','r'];
+			console.log(arr1.concat(arr4)); 	// [20, 8, 345, 5, 4, 936, 7, 245, 657555552, 11, "a", "g", "e", "r"] 
+			console.log(arr1.concat(arr4).length);      //14
+			console.log(typeof arr1.concat(arr4));*/	//object
+		
+
+			//5.pop()：删除并返回数组的最后一个元素 (原数组被修改，长度-1)
+			/*console.log(arr1.pop());	//11
+			console.log(arr1);		  	//[20,8,345,5,4,936,7,245,657555552]
+			console.log(arr1.length);*/	//9
+	
+
+			//6.shift()：删除并返回数组的第一个元素	(原数组被修改，长度-1)
+			/*console.log(arr1.shift())		//20	
+			console.log(arr1);  			//[8, 345, 5, 4, 936, 7, 245, 657555552, 11]
+			console.log(arr1.length);*/   	//9
+
+
+			//7.push()：向数组的末尾添加一个或更多元素，并返回新的长度。
+			/*console.log(arr1.push('fdsfsdf'));	 //11
+			console.log(arr1);  	//[20, 8, 345, 5, 4, 936, 7, 245, 657555552, 11, "fdsfsdf"]
+			console.log(arr1.length);*/ 			//11
+			
+
+			//8.unshift()：向数组的开头添加一个或更多元素，并返回新的长度。
+			/*console.log(arr1.unshift('qwewqr'));	//11
+			console.log(arr1);  	// ["qwewqr", 20, 8, 345, 5, 4, 936, 7, 245, 657555552, 11]
+			console.log(arr1.length);*/  		//11
+			
+
+			//9.slice()：从某个已有的数组返回选定[start,end)的元素
+			/*var arr2 =arr1.slice(2,4);
+			console.log(arr2);  //[345, 5] [start,end):包含start不包含end，只是截取一个子数组，不会修改原数组
+			console.log(arr1);*/	//[20, 8, 345, 5, 4, 936, 7, 245, 657555552, 11]原数组不变
+
+
+			//10.splice()：向/从数组中添加/删除项目，然后返回被删除的项目。(原数组被修改)
+			var arr5 = arr1.splice(2,1,'Younger');
+			console.log(arr1.splice(2,2,'Younger'));	//[345, 5]	被删除的项目
+			console.log(arr5);  //[345]		被删除的项目
+			console.log(arr1);	//被修改后的数组 Array(10) [20,8,'Younger',5,4,936,7,245,657555552,11]
+	
+
+			//11.reverse()：对一个数组进行倒序排列
+			/*var arr3 =arr1.reverse();
+			console.log(arr3);*/   //[11, 657555552, 245, 7, 936, 4, 5, 345, 8, 20]
+
+			
+			//12.sort()：对数组的元素进行排序但是排序算法不理想(只按最高位上的数字大小排序)
+			/*var arr4 =arr1.sort();
+			console.log(arr4);*/  //[11, 20, 245, 345, 4, 5, 657555552, 7, 8, 936]
+		</script>
+	</body>
+</html>

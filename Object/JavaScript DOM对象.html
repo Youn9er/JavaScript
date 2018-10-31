@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript DOM对象</title>
+	</head>
+	<body>
+		<button id='btn'>按钮</button>
+
+		<ul>
+			<li>111</li>
+			<li>222</li>
+			<li>333</li>
+		</ul>
+
+		<script type="text/javascript">
+			
+			var oBtn = document.getElementById('btn');//通过id得到dom对象(button)，将返回值赋给oBtn
+
+			console.log(typeof oBtn);		//object
+			console.log(oBtn.id);			//btn
+
+			oBtn.id = 'yyy';				//修改oBtn对象的属性id的属性值为'yyy'
+			console.log(oBtn.id);			//yyy
+
+			var aLi = document.getElementsByTagName('li'); //通过标签名找到li对象（数组）
+
+			console.log(aLi);		//[li,li,li]
+			console.log(aLi[0]);	//<li>111</li>
+
+			/*for循环在函数加载时就执行，onclick在点击时才能执行，异步执行*/
+			for(var i=0; i<aLi.length; i++){
+				aLi[i].onclick=function(){
+					/*console.log(aLi[i].innerHTML);*/ //Cannot read property 'innerHTML' of undefined
+					/*console.log(aLi[i]);*/			//undefined
+					/*console.log(i);*/					//3,3,3
+
+					//this指向当前发生事件的对象
+					console.log(this.innerHTML);		//111,222,333
+
+				}
+			}
+		</script>
+	</body>
+</html>

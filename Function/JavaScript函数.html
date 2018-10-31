@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript函数</title>
+	</head>
+	<body>
+
+		<script type="text/javascript">
+
+			//定义
+			/*function f1(){
+				alert('aaa');
+			}
+			f1();		//aaa 调用
+
+			
+			function f2(str){		//形参
+				alert(str);
+			}
+			f2('aaa');	//aaa 		实参
+			f2('bbb')*/	//bbb 		实参
+
+			//传参
+			function f3(name,age){
+				console.log('姓名： ' + name +  '年龄： ' + age);
+			}
+			f3('Younger',22);	//姓名：Younger年龄：22
+
+			function f4(name,age,sex){
+				console.log('姓名： ' + name + '年龄： ' + age + ',' + '性别： ' + sex);
+			}
+			f4('Younger',22);	//姓名：Younger年龄：22性别：undefined。实参少于形参不会报错(区别于java)
+
+			function f5(name,age){
+				console.log('姓名： ' + name + '年龄： ' + age);
+			}
+			f5('Younger',22,'man')	//姓名：Younger年龄：22	 实参多于形参不会报错也不会输出
+
+			function f6(name,age){
+				console.log('年龄： ' + age + '姓名： ' + name + '  ' + arguments[2]);//js函数中的内置关键字arguments(类数组对象)，用来存储传入函数的全部参数。
+			}
+			f6('Younger',22,'man'); //年龄： 22姓名： Younger  man   
+
+
+			//
+			/*aa();	//aa 	先调用后声明可以执行	
+			function aa(){	//函数声明,浏览器会先检查整个js代码，把声明的函数调到前面以提前声明
+				alert('aa');
+			}
+			aa();*/		//aa  		
+
+			//--------------------------------------------------------------------
+			/*aa();	//先调用，后声明，不能执行。aa is not a function
+			var aa = function(){	//函数表达式，赋值语句。js中函数也是一个对象，万物皆对象！
+				alert('aaa');
+			}*/
+			//aa();		//aa
+			
+			//函数式编程
+			/*function aa(b){	 //function作为一个对象赋给b
+				b();		//b为函数function
+			}
+			aa(function(){
+				alert('Younger');
+			});*/			//js中函数也是一种数据类型(引用类型)，可以作为一个值来使用
+
+
+			/*function aa(b){	 
+				b(function(){
+					alert('Taozi');
+				});		
+			}
+			aa(function(c){
+				c();
+			});*/	
+
+
+
+			function aa(b){	 
+				b(function(d){
+					alert(d);
+				});		
+			}
+			aa(function(c){
+				c('yyyyyy');
+			});	
+		</script>
+	</body>
+</html>

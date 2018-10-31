@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+</head>
+<body>
+	<div>test1</div>
+	<div>test2</div>
+	<div>test3</div>
+
+	<script type="text/javascript">
+		//1.
+		/*console.log('one');
+		setTimeout(function(){
+			console.log('two')
+		}, 10);
+		console.log('three');*/		//one three two
+
+		//2.
+		/*var name = 'word';
+		(function(){
+			if(typeof name ==='undefined'){
+				var name = 'Jack';
+				console.log('Goodbye'+name);	
+			}else{
+				console.log('hello'+name);
+			}
+		})();*/						//GoodbyeJack
+
+		//3.
+		/*for (var i=0;i<10;++i) {
+			setTimeout(function(){
+				console.log(i)
+			}, 0)
+		}*/							//10,10,10,10,10,10,10,10,10,10
+
+		//4.
+		/*for(var i=0;i<10;i++){
+			setTimeout(function(){
+				console.log(i);
+			},0);
+			console.log(i);	
+		}*/							//1,2,3,4,5,6,7,8,9,10,10,10,10,10,10,10,10,10,10
+
+		//5.
+		/*var fn = function(){
+			var oDiv=document.querySelectorAll('div');
+			for(var i=0;i<3;i++){
+				oDiv[i].onclick=function(){
+					alert(i);
+				};
+			}
+		};
+		fn();*/						//test1 :3   test2 :3   test3 :3
+
+		//6.
+		/*var fn=function(){
+			var oDiv = document.querySelectorAll('div');
+			for(var i=0;i<3;i++){
+				oDiv[i].onclick=(function(i){
+					return function(){
+						alert(i);
+					};
+				})
+				(i);	
+			}
+		};
+		fn();*/						//test1 :0   test2 :1   test3 :2
+
+		//7.
+		/*var fn=function(){
+			var oDiv = document.querySelectorAll('div');
+			for(var i=0;i<3;i++){
+				(function(i){
+					oDiv[i].onclick=function(){
+						alert(i);
+					};
+				})
+				(i);
+			}
+		};
+		fn();*/						//test1 :0   test2 :1   test3 :2
+
+		//8.
+		for(var i=0;i<3;i++){
+			setTimeout((function(i){
+				return function(){
+					console.log(i);
+				};
+			})
+			(i),0);
+			console.log(i);
+		}							//0,1,2,0,1,2
+	</script>
+</body>
+</html>

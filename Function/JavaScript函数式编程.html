@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>函数式编程</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			//函数式编程
+			//1.
+			/*function aa(b){		//b为function aa()的形参
+				b();				//b为一个函数，对应function c()
+			}
+			aa(function c(){		//调用函数aa，function c()作为aa的实参
+				alert('Younger');
+			});*/						//Younger
+
+			//2.
+			function aa(b){		//b为aa()的形参，对应的实参为function cc(c)
+				b(function bb(){	//function bb()为b的实参，与之对应的形参为c
+					alert('hhhhh');
+				});
+			}
+			aa(function cc(c){
+				c();				//hhhhh   相当于 c = function bb()
+			});
+
+			//3.
+			/*function aa(b){
+				b(function(d){
+					alert(d);		//yyy
+				});
+			}
+			aa(function(c){
+				c('yyyyy');
+			});*/
+
+
+		</script>
+	</body>
+</html>

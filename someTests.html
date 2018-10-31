@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//1.
+		(function(){
+			var a = b = 5;
+		})
+		();
+		console.log(b);	//5
+		//console.log(a);	//Uncaught ReferenceError: a is not defined
+
+		//2.
+		console.log(1 + "2" + "2");		//122
+		console.log(1 + +"2" + "2");	//32
+		console.log("A" - "B" + "2");	//NaN2
+		console.log("A" - "B" + 2);		//NaN
+
+		//3.
+		//var a = 4399<0||typeof(4399 + '');
+		//console.log(a);			//string 
+
+		//4.
+		var person = {
+			fname:"Jhon",
+			lname:"Doe",
+			age:25
+		};
+		var txt = "";
+		for(x in person){
+			txt = txt + person[x];
+		}
+		alert(txt);
+
+		//5.
+		console.log(([])?true:false);	//true  引用类型转换成基本类型才能进行==运算，引用类型转换为Boolean值都是true
+		console.log(([]==false?true:false));	//true
+		console.log(({}==false)?true:false);	//false
+
+		//6.
+		var A = {
+			n:4399
+		};
+		var B = function(){
+			this.n = 9999;
+		};
+		var C = function(){
+			var n = 8888;
+		};
+		B.prototype = A;
+		C.prototype = A;
+		var b = new B();
+		var c = new C();
+		A.n++;
+		console.log(b.n);	//9999
+		console.log(c.n);	//4400
+
+		//7.Boolean值与Boolean对象。（基本数据类型与引用数据类型）
+		var x = new Boolean(false);	//x为非空对象。
+		//显示创建基本包装类型对象。所有基本包装类型的对象都会被转换为布尔值true
+		if(x){
+			alert("hi");	//hi
+		}else{
+			alert("hii");
+		}
+		console.log(typeof x);	//object
+
+		var y = Boolean(0);	//y为基本数据类型
+		if(y){
+			alert("hello");
+		}else{
+			alert("world");	//world
+		}
+		console.log(typeof y);	//boolean
+
+        //8.
+        var foo = {n:1};
+        (function (foo){	//形参foo同实参foo一样指向同一片北村空间，这里空间里的n的值为1
+            var foo;		//优先级低于形参，无效。
+            console.log(foo.n);	//1
+            foo.n = 3;		//形参与实参foo指向的内存空间里的n的值被改为3
+            var foo ={n:2};	//形参foo指向了新的内存空间，里面n的值为2
+            console.log(foo.n);	//输出新的内存空间的n的值
+        })
+        (foo);
+        console.log(foo.n);		//实参foo的指向还是原来的内存空间，里面的n的值为3
+
+        //9.
+        console.log('one');
+        setTimeout(function(){
+            console.log('two');
+        },0);
+        console.log('three');
+        //输出 one three two
+
+        //10.
+        for(var i=0; i>5; ++i){
+            setTimeout(function(){
+                console.log(i+ '')		//5 5 5 5 5
+            },100);
+        }
+
+        //11.
+        var f = function g(){
+            return 23;
+        };
+        console.log(typeof f);	//function
+        console.log(typeof f());	//number
+        console.log(typeof g);	//underfined
+        console.log(typeof g());	//Uncaught ReferenceError: g is not defined
+	</script>
+</body>
+</html>

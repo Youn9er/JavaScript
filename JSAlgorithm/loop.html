@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>loop</title>
+</head>
+<body>
+    
+
+    <script>
+        // var promptNum = window.prompt('输入一个整数： ');
+        // var resultNum = 2;
+        // for (var i=1;i<promptNum;i++) {
+        //     resultNum *= 2;
+        // }
+        // console.log(resultNum);
+        
+        // var rideNum = window.prompt('请输入一个整数： ')
+        // var ride = 1;
+        // for (var i=1;i<=rideNum;i++) {
+        //     ride *= i;
+        // }
+        // console.log(ride);
+
+        var reviseNum = window.prompt('请输入一个三位整数： '),
+            firstNum = reviseNum%10,
+            thirdNum = (reviseNum - reviseNum%100)/100,
+            secendNum = (reviseNum - reviseNum%100*100)/10;
+        console.log(secendNum*10);
+        
+        // var ride = 1;
+        // for (var i=1;i<=rideNum;i++) {
+        //     ride *= i;
+        // }
+        // console.log(ride);
+            
+        // var firstNum = 1,
+        //     secendNum = 1,
+        //     FibonacciNum = window.prompt('请输入一个整数： ');
+        // for (var i=0;i<FibonacciNum;i++) {
+        //     Fibonacci = 
+        // }
+
+        // var a = window.prompt('a： '),
+        //     b = window.prompt('b： '),
+        //     c = window.prompt('c： ');
+        // if (a>b && a>c){
+        //     console.log(a);
+        // } else if (b>a && b>c) {
+        //     console.log(b)
+        // } else {
+        //     console.log(c);
+        // }
+            
+        //寻找100以内所有的质数
+        var count = 0;
+        for (var i = 0; i < 100; i++) {
+            for (var j = 0; j <= i; j++) {
+                if(i % j == 0){
+                    count ++;
+                }
+            }
+            if (count == 2){
+                console.log(i + "");
+            }
+            count = 0;
+        }
+
+        for (var i = 2; i < 100; i++) {
+            for (var j = 1; j <= Math.sqrt(i); j++) {
+                if(i % j == 0){
+                    count ++;
+                }
+            }
+            if (count == 1){
+                console.log(i + "");
+            }
+            count = 0;
+        }
+    </script>
+</body>
+</html>

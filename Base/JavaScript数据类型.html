@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>javascript数据类型</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//数据类型
+		var a = 5;		//number
+		var b = 'sadasdsfdsg';  //string
+		var c = true;	//boolean
+		var d;		//undefined
+		console.log(d);		//undefined
+
+		//数据类型的转换
+		//一：+转换
+		var y = 5;
+		var z = 6;  //输出11
+		var z = '6' //输出56,56为字符型而不是数字，浏览器默认会把数字转换成字符串，为了安全(数字转字符串直接加引号就行)
+		console.log(typeof(y + z));		//string
+		console.log(y + z);		//56 顺序执行
+
+		var e = 'abc';		//string
+		var f = true;		//boolean
+		var g = false;		//Boolean
+		console.log(e + f); //abctrue (Boolean型转为字符串型)
+
+		console.log(y + f); //6 (boolean值true转换为1，false为0)；
+		console.log(y + g); //5  (boolean值true转换为1，false为0)
+
+		//二：-、*、/
+		//强制把非number型转换成number型
+		console.log(e - f);//NaN(Not aNumber)
+	</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Array_slice方法</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		//slice() 方法可从已有的数组中返回选定的元素
+		//arrayObject.slice(start,end)
+		//返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。
+		//该方法并不会修改数组，而是返回一个子数组。如果想删除数组中的一段元素，应该使用方法 Array.splice()。
+		var a=[1,2,3,4,3];
+		var b=a.slice(1,2);
+		alert(a);	//1,2,3,4,3
+		alert(b);	//2
+	</script>
+</body>
+</html>

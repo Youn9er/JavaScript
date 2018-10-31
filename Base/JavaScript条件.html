@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript条件</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//1.if...Else
+		/*if(条件){
+			条件为真执行的代码
+		}else{
+			条件为假执行的代码
+		}
+		....*/
+
+		//2.if...else if...else
+		/*if(条件1){
+			条件1为真时执行的代码
+		}else if(条件2){
+			条件2为真时执行的代码
+		}else if(条件3){
+			条件3为真时执行的代码
+		}else{
+			条件1、条件2、条件3都不为真时执行的代码
+		}*/
+
+
+		//3.switch：if语句的兄弟语句，可用于字符串(不同于java)，switch(sColor)、case red等写法是有效的 	
+		var a = 5;
+		//var a = 8;		//连续赋值下面的会覆盖上面的
+		switch (a) {
+			case 5:
+				alert('a=5');		//a=5时执行
+				//break;			//break阻止代码自动向下一行case运行。如果不break()，会继续执行case 6。运行结果a = 5,a = 6.
+			case 6:
+				alert('a=6');		//a=6时执行
+				break;
+			case 7:
+				alert('a=7');		//a=7时执行
+				break;
+			default:
+				alert('a=other')	//a!=5&&a!=6&&!=7时执行
+				break;
+		}
+
+		//不加break完成某些需求
+		var answer = 'a';
+		/*switch (answer) {
+			case 'a':             //完成不区分大小写的需求
+			case 'A':
+				fn();
+				break;
+		};*/
+
+		//4.三元表达式：
+		console.log(answer='a'?'yes':'no');	//条件?'结果1':'结果2'。条件满足结果1，不满足结果2。
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test-变量对象</title>
+</head>
+<body>
+    <script>
+        /*function foo() {
+            console.log("function foo");
+        }
+        var foo = 20;
+        console.log(foo);*/   //20
+
+
+        console.log(foo);   // function foo
+        function foo() {
+            console.log("function foo");
+        }
+        var foo = 20;
+
+        // 上述的执行顺序为
+        // 首先将所有函数声明放入变量对象中
+        //function foo() { console.log('function foo') }
+
+        // 其次将所有变量声明放入变量对象中，但是因为foo已经存在同名函数，因此此时会跳过undefined的赋值
+        // var foo = undefined;
+
+        // 然后开始执行阶段代码的执行
+        //console.log(foo); // function foo
+        //foo = 20;
+
+    </script>
+</body>
+</html>

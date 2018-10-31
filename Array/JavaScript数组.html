@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Array</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			//定义
+			var arr = [];
+			var arr1 = new Array();
+			console.log(arr1);		//[]
+
+			//赋值
+			//1.
+			/*var arr2 = [1,2,3,4,5,];
+			var arr1 = new Array(1,2,3);
+
+			//2.
+			var arr3 = new Array(); 		//不限制数组长度
+			arr3[0] = 'a';
+			arr3[1] = 'b';
+			arr3[2] = 'c';
+			console.log(arr3);	//a,b,c
+
+			var arr4 = new Array(3);		//控制数组长度
+			arr4[0] = 'a';
+			arr4[1] = 'b';
+			arr4[2] = 'c';*/
+
+			var arr5 = new Array();
+			arr5[0] = 'a';
+			arr5[1] = 'b';
+			arr5[2] = 'c';
+			console.log(arr5[4]);	//undefined 超出数组长度js为未定义，java中发生越界错误。
+
+			//数组遍历
+			var arr6 = [1,2,3,4,5,'abc',true];//js中同一个数组可以定义不同的数据类型（相当灵活），java中不可以。
+			for(var i=0; i<arr6.length;i++){
+				console.log(arr6[i]);  //1,2,3,4,5,abc,true
+			}
+			
+		</script>
+	</body>
+</html>

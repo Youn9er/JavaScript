@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript对象</title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+/*JavaScript中数据存放方式：基本数据类型存放在栈内存中，引用数据类型存放在堆内存中，new的一个新对象为引用类型，存放在堆内存中，内存地址赋予obj1，obj1存放在栈内存中，用指针通过obj1获取它所对应的对象*/
+			var obj1 = {
+				name : "Younger",
+				age : 22,
+				sex : "male",
+				girlF : {
+					 name : "TaoZi",
+					 age : 22,
+					 sex : "female"
+				 }
+			};
+
+			//获取对象的某一个属性：
+			//方法1：
+			console.log(obj1.name); //Younger
+			//方法2:
+			console.log(obj1['name']);	//Younger
+			
+			/*var obj2 = obj1;	//将地址赋给obj2
+			console.log(obj2.name);		//Younger
+
+			obj1.name = "TaoZi";
+			console.log(obj2.name);*/		//TaoZi
+
+			//完成拷贝obj1，返回给新的对象
+			//方法一(不够灵活)：
+			/*var obj3 = new Object();
+			obj3.name = obj1.name;
+			obj3.age = obj1.age;
+			obj3.sex = obj1.sex;
+			obj3.girlF = obj1.girlF;
+			console.log(obj3.name);			//Younger
+			console.log(obj3);*/			//object
+
+			//方法二(封装一个clone函数)[该方法不能达到深拷贝，见obj7和obj8]：
+			/*function clone(obj){
+				var newObj = {};
+				for(var p in obj){
+//					console.log(p);	//name,age,sex,girlF{};
+//					console.log(obj.p);	//undefined,undefined,undefined,undefined
+					console.log(obj[p]);// name age sex girf
+					newObj[p] = obj[p];
+				}
+				return newObj;
+			};*/
+			/*var obj4 = clone(obj1);
+			console.log(obj4);*/ //{name: "Younger", age: 22, sex: "male", girlF: {name: "TaoZi", age: 22, sex: "female"}}
+
+			/*obj1.name = 'YYYYY';
+			var obj5 = clone(obj1);
+			console.log(obj5);*/  	//{name: "YYYYY", age: 22, sex: "male", girlF: {name: "TaoZi", age: 22, sex: "female"}}
+
+			/*var obj6 = clone(obj1);
+			obj1.name = 'ZZZZZ';
+			console.log(obj6);*/ //{name: "Younger", age: 22, sex: "male", girlF: {name: "TaoZi", age: 22, sex: "female"}}
+
+
+			/*obj1.girlF.name = "ZTT";
+			var obj7 = clone(obj1);			
+			console.log(obj7.girlF);//{name: "ZTT", age: 22, sex: "female"}
+
+			var obj8 = clone(obj1);
+			obj1.girlF.name = "ZTT";
+			console.log(obj8.girlF);*///{name: "ZTT", age: 22, sex: "female"}}
+
+
+			//深拷贝：(！！！)
+			function clone(obj){
+				var newObj = {};
+				for(var p in obj){
+					if(typeof(obj[p]) == "object"){
+						newObj[p] = clone(obj[p]);
+					}else{
+						newObj[p] = obj[p];
+					}
+				}
+				return newObj;
+			}
+
+			var obj8 = clone(obj1);
+			obj1.girlF.name = "ZTT";
+			console.log(obj8.girlF);	//{name: "TaoZi", age: 22, sex: "female"}
+
+			obj1.girlF.name = "ZTT";
+			var obj7 = clone(obj1);			
+			console.log(obj7.girlF);	//{name: "ZTT", age: 22, sex: "female"}
+						
+		</script>
+	</body>
+</html>

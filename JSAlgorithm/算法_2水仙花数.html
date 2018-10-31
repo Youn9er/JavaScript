@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>算法_2水仙花数</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			for(var i=100; i<1000; i++){
+				var hundreds = parseInt(i / 100);
+				var decade = parseInt(i % 100 / 10);
+				var unit = i % 10;
+				if(Math.pow(hundreds,3) + Math.pow(decade,3) + Math.pow(unit,3) == i){
+					console.log(i);
+				}
+			}
+		</script>
+	</body>
+</html>

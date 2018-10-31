@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test_立即执行函数和变量连续声明</title>
+</head>
+<body>
+	<script type="text/javascript">
+		(function(){
+			var a = b = 5;
+		})
+		();
+		console.log(b);		//5
+		console.log(a);		//Uncaught ReferenceError: a is not defined
+	</script>
+</body>
+</html>
