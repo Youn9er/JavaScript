@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+<div><select name="" id="test">
+    <option value="1">1人</option>
+    <option value="2">2人</option>
+    <option value="3">3人</option>
+    <option value="4">4人</option>
+    <option value="5">5人</option>
+</select></div>
+
+<script>
+    let obj = document.querySelector("#test");
+    obj.onchange = function() {
+        console.log("obj==",obj.options[obj.selectedIndex].value)
+    }
+    function test(){
+        console.log(obj);
+    }
+
+</script>
+</body>
+</html>
